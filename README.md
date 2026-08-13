@@ -1,14 +1,18 @@
-# CHAPTER:0 Prototype
+# CHAPTER:0
 
-「若者の今を、記録する。」をテーマにしたメディアサイトのプロトタイプです。
+若者の今を記録するカルチャーメディアのNext.jsプロトタイプです。
 
-## Live site
+## Development
 
-https://chapter-zero-media.ankotsubujii.chatgpt.site/
+```bash
+npm install
+npm run dev
+```
 
-## Repository contents
+## Stack
 
-- `index.html` — ブラウザで開けるプロトタイプ入口
-- `assets/` — 公開サイトから書き出した画像、動画、スタイル、フォント素材
+- Next.js App Router
+- TypeScript
+- Vercel
 
-This repository is a prototype archive of the published CHAPTER:0 site.
+Production deployments are connected to the `main` branch on GitHub.
