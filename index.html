@@ -1,20 +1,67 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CHAPTER:0 Prototype</title>
-    <style>
-      html, body, iframe { width: 100%; height: 100%; margin: 0; border: 0; }
-      body { overflow: hidden; background: #000; }
-    </style>
-  </head>
-  <body>
-    <iframe
-      src="https://chapter-zero-media.ankotsubujii.chatgpt.site/"
-      title="CHAPTER:0 | 若者の今を、記録する。"
-      loading="eager"
-      allow="autoplay; fullscreen"
-    ></iframe>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="若者の今を、記録する。CHAPTER:0 プロトタイプ">
+  <title>CHAPTER:0 | 若者の今を、記録する。</title>
+  <style>
+    :root { --ink:#111; --paper:#f4f0e8; --red:#e53b2f; --line:#cbc5b9; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:Arial,"Noto Sans JP",sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    header { position:fixed; z-index:10; inset:0 0 auto; display:flex; align-items:center; justify-content:space-between; padding:18px 4vw; color:#fff; mix-blend-mode:difference; }
+    .logo { font-weight:900; letter-spacing:-.06em; font-size:clamp(24px,3vw,42px); }
+    nav { display:flex; gap:24px; font-size:12px; font-weight:700; letter-spacing:.12em; }
+    .hero { height:100svh; min-height:620px; position:relative; overflow:hidden; background:#070707; color:#fff; }
+    .hero video,.hero img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:.72; }
+    .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(0,0,0,.68),transparent 65%),linear-gradient(0deg,rgba(0,0,0,.55),transparent 55%); }
+    .hero-copy { position:absolute; z-index:2; left:5vw; bottom:8vh; max-width:900px; }
+    .eyebrow { font-size:12px; letter-spacing:.24em; font-weight:700; }
+    h1 { margin:14px 0 20px; font-size:clamp(58px,12vw,170px); line-height:.78; letter-spacing:-.08em; }
+    .hero-copy p { max-width:560px; font-weight:700; font-size:clamp(16px,2vw,26px); line-height:1.55; }
+    .ticker { overflow:hidden; border-bottom:1px solid var(--ink); background:var(--red); color:#fff; white-space:nowrap; padding:13px 0; font-weight:900; letter-spacing:.08em; }
+    .ticker span { display:inline-block; padding-left:100%; animation:ticker 18s linear infinite; }
+    @keyframes ticker { to { transform:translateX(-100%); } }
+    main { padding:8vw 4vw; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; border-bottom:2px solid var(--ink); margin-bottom:30px; }
+    h2 { margin:0 0 10px; font-size:clamp(38px,7vw,90px); line-height:.9; letter-spacing:-.06em; }
+    .issue { font:700 12px/1 monospace; padding-bottom:14px; }
+    .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:24px; }
+    article { border-bottom:1px solid var(--ink); padding-bottom:24px; }
+    article:nth-child(1) { grid-column:span 7; }
+    article:nth-child(2) { grid-column:span 5; }
+    article:nth-child(3),article:nth-child(4),article:nth-child(5) { grid-column:span 4; }
+    article img { width:100%; aspect-ratio:4/3; object-fit:cover; filter:saturate(.85) contrast(1.05); transition:.35s; }
+    article:hover img { filter:saturate(1.1); transform:scale(.985); }
+    .meta { margin:14px 0 8px; display:flex; justify-content:space-between; font:700 11px/1 monospace; text-transform:uppercase; }
+    h3 { margin:0; font-size:clamp(21px,2.5vw,38px); line-height:1.2; letter-spacing:-.04em; }
+    .manifesto { margin:10vw -4vw 0; padding:10vw 5vw; background:#111; color:#fff; display:grid; grid-template-columns:1fr 2fr; gap:8vw; }
+    .manifesto strong { color:var(--red); }
+    .manifesto p { margin:0; font-size:clamp(28px,5vw,70px); line-height:1.15; font-weight:800; letter-spacing:-.05em; }
+    footer { padding:44px 4vw; display:flex; justify-content:space-between; border-top:1px solid #333; background:#111; color:#fff; font:700 11px/1.5 monospace; }
+    @media (max-width:720px) { nav{display:none}.grid{display:block}article{margin-bottom:34px}.manifesto{grid-template-columns:1fr}.hero{min-height:560px} }
+  </style>
+</head>
+<body>
+  <header><a class="logo" href="#top">CHAPTER:0</a><nav><a href="#stories">STORIES</a><a href="#about">ABOUT</a><a href="https://github.com/JamesTSullivan24/c0test">GITHUB</a></nav></header>
+  <section class="hero" id="top">
+    <video autoplay muted loop playsinline poster="assets/chapter0-hero.png"><source src="assets/chapter0-hero.mp4" type="video/mp4"></video>
+    <div class="hero-copy"><div class="eyebrow">YOUTH CULTURE ARCHIVE / TOKYO</div><h1>NOW<br>IS OURS.</h1><p>若者の今を、記録する。<br>まだ名前のないカルチャーの、その瞬間へ。</p></div>
+  </section>
+  <div class="ticker"><span>CHAPTER:0 — MUSIC / ART / FASHION / PEOPLE / CITY — DOCUMENTING THE NEXT GENERATION —&nbsp;&nbsp;&nbsp;</span></div>
+  <main id="stories">
+    <div class="section-head"><h2>LATEST<br>STORIES</h2><div class="issue">ISSUE 000 / 2026</div></div>
+    <div class="grid">
+      <article><img src="assets/festival.jpg" alt="フェスティバル"><div class="meta"><span>REPORT</span><span>08.13.2026</span></div><h3>熱狂の中心で見つけた、まだ名前のない景色。</h3></article>
+      <article><img src="assets/artist-ren.jpg" alt="アーティスト"><div class="meta"><span>INTERVIEW</span><span>08.10.2026</span></div><h3>自分の声で、自分の時代を歌う。</h3></article>
+      <article><img src="assets/live-band.jpg" alt="ライブバンド"><div class="meta"><span>MUSIC</span><span>08.06.2026</span></div><h3>ライブハウスから始まる、新しいチャプター。</h3></article>
+      <article><img src="assets/stage.jpg" alt="ステージ"><div class="meta"><span>SCENE</span><span>07.28.2026</span></div><h3>光と音、その一瞬を記録する。</h3></article>
+      <article><img src="assets/vinyl.jpg" alt="レコード"><div class="meta"><span>CULTURE</span><span>07.20.2026</span></div><h3>手触りのある音楽が、また新しい。</h3></article>
+    </div>
+    <section class="manifesto" id="about"><div class="eyebrow">ABOUT CHAPTER:0</div><p>完成された物語より、<strong>始まる直前</strong>の衝動を。私たちは、次の時代の第0章を記録する。</p></section>
+  </main>
+  <footer><span>CHAPTER:0<br>YOUTH CULTURE ARCHIVE</span><span>PROTOTYPE © 2026<br>TOKYO, JAPAN</span></footer>
+</body>
 </html>
